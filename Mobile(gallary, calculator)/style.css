@@ -1,0 +1,322 @@
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fdfcfc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* ===== PHONE FRAME ===== */
+    .samsung-frame {
+      position: relative;
+      width: 360px;
+      height: 760px;
+      background: #9e773d;
+      border: 12px solid #bdb7b7;
+      border-radius: 40px;
+      box-shadow:
+        0 0 0 2px #bdbcbc,
+        0 20px 60px rgba(183, 180, 180, 0.8),
+        inset 0 0 4px rgba(197, 195, 195, 0.1);
+      flex-shrink: 0;
+    }
+    .camera-lens {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px; height: 14px;
+      background: #020202;
+      border-radius: 50%;
+      z-index: 20;
+      box-shadow: inset 0 0 3px rgba(255,255,255,0.3);
+    }
+    .volume-up, .volume-down, .power-button {
+      position: absolute;
+      right: -14px;
+      width: 4px;
+      background: #333;
+      border-radius: 0 3px 3px 0;
+    }
+    .volume-up   { top: 140px; height: 50px; }
+    .volume-down { top: 198px; height: 50px; }
+    .power-button{ top: 270px; height: 40px; }
+
+    /* ===== SCREEN ===== */
+    .phone-screen {
+      width: 100%; height: 100%;
+      background: #121212;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+    }
+/* ===== APP IFRAME SCREEN ===== */
+#app-screen {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000;
+  display: none;
+  flex-direction: column;
+  z-index: 20;
+  border-radius: 28px;
+  overflow: hidden;
+}
+#app-screen.active { display: flex; }
+
+#app-iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  margin-top: 72px; /* clears the header */
+}
+    /* ===== HOME SCREEN ===== */
+    #home-screen {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 16px 16px;
+      background: linear-gradient(160deg, #1d2e1a 0%, #163e19 50%, #2e600f 100%);
+    }
+    #clock-area {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #clock-area .time {
+      font-size: 2.8rem;
+      font-weight: 200;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+    #clock-area .date {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 2px;
+    }
+    #Search-Bar {
+      width: 100%;
+      height: 2.4rem;
+      border-radius: 1.2rem;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 14px;
+      padding: 0 16px;
+      margin-bottom: 12px;
+      backdrop-filter: blur(8px);
+    }
+    #Search-Bar::placeholder { color: rgba(255,255,255,0.4); }
+
+    #All-apps {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      overflow-y: auto;
+      scrollbar-width: none;
+      align-content: start;
+      padding: 8px 4px;
+    }
+    #All-apps::-webkit-scrollbar { display: none; }
+
+    .Icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      padding: 6px 2px;
+      border-radius: 12px;
+    }
+    .Icon:hover  { transform: scale(1.08); background: rgba(255,255,255,0.06); }
+    .Icon:active { transform: scale(0.9); }
+    .Icon img {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      /* Fallback color if image missing */
+      background: #333;
+    }
+    .Icon h6 {
+      font-size: 10px;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      font-weight: 400;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 60px;
+    }
+
+    /* ===== GALLERY SCREEN ===== */
+    #gallery-screen {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #171616;
+      display: none;
+      flex-direction: column;
+      z-index: 10;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    #gallery-screen.active { display: flex; }
+
+    .gallery-header {
+      display: flex;
+      align-items: center;
+      padding: 40px 16px 12px;
+      background: #111;
+      gap: 12px;
+    }
+    .back-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(255,255,255,0.2); }
+    .gallery-header h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Tabs */
+    .gallery-tabs {
+      display: flex;
+      background: #111;
+      border-bottom: 1px solid #222;
+      padding: 0 16px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      padding: 10px 16px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: #4fc3f7;
+      border-bottom-color: #4fc3f7;
+    }
+
+    /* Photo & Video Grid */
+    .media-grid {
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      overflow-y: scroll;
+      flex: 1;
+      scrollbar-width: none;
+      padding: 3px;
+    }
+    .media-grid::-webkit-scrollbar { display: none; }
+    .media-grid.active { display: grid; }
+
+    .media-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      cursor: pointer;
+      background: #1e1e1e;
+      border-radius: 0.8rem;
+      width: 6rem;
+      height: 6rem;
+    }
+    .media-item img,
+    .media-item video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+      box-shadow: none;
+      transition: transform 0.2s;
+    }
+    .media-item:hover img,
+    .media-item:hover video { transform: scale(1.05); }
+    .media-item:active img,
+    .media-item:active video { transform: scale(0.95); }
+
+    /* Video play icon overlay */
+    .play-overlay {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 32px; height: 32px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+    }
+    .play-overlay::after {
+      content: '';
+      border-left: 12px solid #fff;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      margin-left: 3px;
+    }
+
+    /* ===== LIGHTBOX (Full screen photo/video viewer) ===== */
+    #lightbox {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      display: none;
+      flex-direction: column;
+      z-index: 30;
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    #lightbox.active { display: flex; }
+
+    .lightbox-header {
+      display: flex;
+      align-items: center;
+      padding: 40px 16px 12px;
+      background: rgba(0,0,0,0.8);
+      gap: 12px;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 5;
+    }
+    .lightbox-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      
+    }
+    #lightbox-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    #lightbox-vid {
+      max-width: 100%;
+      max-height: 100%;
+      display: none;
+      outline: none;
+    }
+
+ 

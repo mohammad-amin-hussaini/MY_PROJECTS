@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samsung Phone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="samsung-frame">
+  <div class="camera-lens"></div>
+  <div class="volume-up"></div>
+  <div class="volume-down"></div>
+  <div class="power-button"></div>
+
+  <div class="phone-screen">
+    
+    <div id="home-screen">
+      <div id="clock-area">
+        <div class="time" id="clock">12:00</div>
+        <div class="date" id="date-display">Sunday, June 7</div>
+      </div>
+
+      <input type="text" id="Search-Bar" placeholder="🔍  Search apps...">
+
+      <div id="All-apps"></div>
+    </div>
+
+    <!-- ===== GALLERY SCREEN ===== -->
+    <div id="gallery-screen">
+      <div class="gallery-header">
+        <button class="back-btn" id="gallery-back">‹</button>
+        <h2>Gallery</h2>
+      </div>
+
+      <div class="gallery-tabs">
+        <button class="tab-btn active" data-tab="photos">📷 Photos</button>
+        <button class="tab-btn" data-tab="videos">🎬 Videos</button>
+      </div>
+
+      <!-- Photos Grid -->
+      <div class="media-grid active" id="photos-grid">
+
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/1.jpeg">
+          <img src="Assets/Photos/1.jpeg" onerror="this.style.background='#e74c3c';this.removeAttribute('src')" alt="Photo 1">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/2.jpeg">
+          <img src="Assets/Photos/2.jpeg" onerror="this.style.background='#3498db';this.removeAttribute('src')" alt="Photo 2">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/3.jpeg">
+          <img src="Assets/Photos/3.jpeg" onerror="this.style.background='#2ecc71';this.removeAttribute('src')" alt="Photo 3">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/4.jpeg">
+          <img src="Assets/Photos/4.jpeg" onerror="this.style.background='#f39c12';this.removeAttribute('src')" alt="Photo 4">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/5.jpeg">
+          <img src="Assets/Photos/5.jpeg" onerror="this.style.background='#9b59b6';this.removeAttribute('src')" alt="Photo 5">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/6.jpeg">
+          <img src="Assets/Photos/6.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 6">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/7.jpeg">
+          <img src="Assets/Photos/7.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 7">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/8.jpeg">
+          <img src="Assets/Photos/8.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 8">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/9.jpeg">
+          <img src="Assets/Photos/9.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 9">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/10.jpeg">
+          <img src="Assets/Photos/10.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 10">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/11.jpeg">
+          <img src="Assets/Photos/11.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 11">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/12.jpeg">
+          <img src="Assets/Photos/12.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 12">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/13.jpeg">
+          <img src="Assets/Photos/13.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 13">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/14.jpeg">
+          <img src="Assets/Photos/14.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 14">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/15.jpeg">
+          <img src="Assets/Photos/15.jpeg" onerror="this.style.background='#1abc9c';this.removeAttribute('src')" alt="Photo 15">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/16.jpeg">
+          <img src="Assets/Photos/16.jpeg" onerror="this.style.background='#e74c3c';this.removeAttribute('src')" alt="Photo 16">
+        </div>
+        <div class="media-item" data-type="photo" data-src="Assets/Photos/17.jpeg">
+          <img src="Assets/Photos/17.jpeg" onerror="this.style.background='#e74c3c';this.removeAttribute('src')" alt="Photo 17">
+        </div>
+      </div>
+
+      <!-- Videos Grid -->
+      <div class="media-grid" id="videos-grid">
+        <div class="media-item" data-type="video" data-src="Assets/Movies/1.mp4">
+          <video src="Assets/Movies/1.mp4" muted preload="metadata"></video>
+          <div class="play-overlay"></div>
+        </div>
+        <div class="media-item" data-type="video" data-src="Assets/Movies/2.mp4">
+          <video src="Assets/Movies/2.mp4" muted preload="metadata"></video>
+          <div class="play-overlay"></div>
+        </div>
+        <div class="media-item" data-type="video" data-src="Assets/Movies/3.mp4">
+          <video src="Assets/Movies/3.mp4" muted preload="metadata"></video>
+          <div class="play-overlay"></div>
+        </div>
+        <div class="media-item" data-type="video" data-src="Assets/Movies/4.mp4">
+          <video src="Assets/Movies/4.mp4" muted preload="metadata"></video>
+          <div class="play-overlay"></div>
+        </div>
+        <div class="media-item" data-type="video" data-src="Assets/Movies/5.mp4">
+          <video src="Assets/Movies/5.mp4" muted preload="metadata"></video>
+          <div class="play-overlay"></div>
+        </div>
+        <div class="media-item" data-type="video" data-src="Assets/Movies/6.mp4">
+          <video src="Assets/Movies/6.mp4" muted preload="metadata"></video>
+          <div class="play-overlay"></div>
+        </div>
+        <div class="media-item" data-type="video" data-src="Assets/Movies/7.mp4">
+          <video src="Assets/Movies/7.mp4" muted preload="metadata"></video>
+          <div class="play-overlay"></div>
+        </div>
+        <div class="media-item" data-type="video" data-src="Assets/Movies/9.mp4"="">
+          <video src="Assets/Movies/9.mp4" muted preload="metadata"></video>
+          <div class="play-overlay"></div>
+        </div>
+        </div>
+      </div>
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="lightbox">
+      <div class="lightbox-header">
+        <button class="back-btn" id="lightbox-back">‹</button>
+      </div>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="">
+       <video id="lightbox-vid" controls"></video>
+      </div>
+    </div>
+    
+    <!-- ===== Calculator IFRAME SCREEN ===== -->
+<div id="app-screen">
+  <div class="lightbox-header">
+    <button class="back-btn" id="app-back">‹</button>
+  </div>
+  <iframe id="app-iframe" src="Assets/calculate/index.html" frameborder="0"></iframe>
+</div>
+
+  </div><!-- /phone-screen -->
+</div><!-- /samsung-frame -->
+</body>
+<script src="Script.js"></script>
+</html>
